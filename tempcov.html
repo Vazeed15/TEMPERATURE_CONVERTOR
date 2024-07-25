@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Temperature Converter</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='tempcov.css') }}">
+</head>
+<body>
+    <h1>Temperature Converter</h1>
+    <form method="POST">
+        <label for="choice">Select Conversion:</label>
+        <select name="choice">
+            <option value="celsius_to_fahrenheit">Celsius to Fahrenheit</option>
+            <option value="fahrenheit_to_celsius">Fahrenheit to Celsius</option>
+        </select>
+        <br>
+        <label for="temperature">Enter Temperature:</label>
+        <input type="number" name="temperature" step="0.01">
+        <br>
+        <input type="submit" value="Convert">
+    </form>
+    {% if result is defined %}
+        <p>{{ temperature }}{{ units }} is equal to {{ result }}{{ units }}</p>
+    {% endif %}
+</body>
+</html>
